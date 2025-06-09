@@ -1,0 +1,579 @@
+@import 'variables';
+
+.task-section {
+  padding: $spacing-3xl 0;
+  position: relative;
+  
+  &.alternate {
+    background-color: $gray-50;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+    
+    .task-number {
+      display: inline-block;
+      background-color: $primary-color;
+      color: white;
+      font-size: $font-size-sm;
+      font-weight: 600;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-full;
+      margin-bottom: $spacing-sm;
+    }
+    
+    h2 {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-sm;
+      color: $gray-800;
+    }
+    
+    p {
+      color: $gray-600;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .task-content {
+    display: flex;
+    gap: $spacing-2xl;
+    align-items: center;
+    
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  .task-description, .task-preview {
+    flex: 1;
+  }
+  
+  .task-description {
+    h3 {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-md;
+      color: $gray-800;
+    }
+    
+    p {
+      margin-bottom: $spacing-lg;
+      color: $gray-600;
+    }
+    
+    .task-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+      
+      span {
+        background-color: rgba($primary-color, 0.1);
+        color: $primary-color;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-full;
+        font-size: $font-size-sm;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .task-preview {
+    .code-block {
+      background-color: $white;
+      border-radius: $border-radius;
+      box-shadow: $shadow-md;
+      overflow: hidden;
+      
+      .code-icon {
+        margin: $spacing-md;
+        color: $gray-500;
+      }
+      
+      pre {
+        max-height: 350px;
+        overflow-y: auto;
+        margin: 0;
+        
+        &::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background-color: $gray-300;
+          border-radius: $border-radius-full;
+        }
+      }
+    }
+  }
+  
+  // Responsive Demo Styles
+  .responsive-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    
+    .device-container {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-xl;
+      padding: $spacing-lg;
+      background-color: $gray-50;
+      border-bottom: 1px solid $gray-200;
+    }
+    
+    .device {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: $spacing-sm;
+      border-radius: $border-radius;
+      transition: all $transition-normal ease;
+      
+      svg {
+        margin-bottom: $spacing-xs;
+      }
+      
+      span {
+        font-size: $font-size-sm;
+        color: $gray-600;
+      }
+      
+      &:hover {
+        background-color: rgba($primary-color, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  // Interactive Demo Styles
+  .interactive-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    padding: $spacing-xl;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    
+    svg {
+      color: $accent-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      margin-bottom: $spacing-lg;
+    }
+    
+    .color-change-btn {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius;
+      font-weight: 600;
+      margin-bottom: $spacing-lg;
+      transition: all $transition-normal ease;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba($primary-color, 0.3);
+      }
+    }
+  }
+  
+  // API Demo Styles
+  .api-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    
+    .api-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $spacing-md $spacing-lg;
+      background-color: $gray-800;
+      color: $white;
+      
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        margin: 0;
+        font-size: $font-size-lg;
+      }
+      
+      .refresh-btn {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        background-color: rgba($white, 0.1);
+        border: none;
+        color: $white;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius;
+        font-size: $font-size-sm;
+        transition: background-color $transition-normal ease;
+        
+        &:hover {
+          background-color: rgba($white, 0.2);
+        }
+        
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        
+        .spinning {
+          animation: spin 1s linear infinite;
+        }
+      }
+    }
+    
+    .posts-container {
+      padding: $spacing-lg;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-md;
+      
+      .loading {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: $spacing-lg;
+        color: $gray-500;
+      }
+      
+      .post-card {
+        background-color: $gray-50;
+        border-radius: $border-radius;
+        padding: $spacing-md;
+        border-left: 3px solid $primary-color;
+        
+        h4 {
+          color: $gray-800;
+          margin-bottom: $spacing-sm;
+          font-size: $font-size-base;
+          text-transform: capitalize;
+        }
+        
+        p {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+    
+    .error-message {
+      color: $error-color;
+      padding: $spacing-md;
+      text-align: center;
+      background-color: rgba($error-color, 0.1);
+      margin: 0 $spacing-lg;
+      border-radius: $border-radius;
+    }
+  }
+  
+  // Form Demo Styles
+  .form-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    padding: $spacing-xl;
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+    
+    label {
+      font-weight: 500;
+      color: $gray-700;
+    }
+    
+    input, textarea {
+      padding: $spacing-sm;
+      border: 1px solid $gray-300;
+      border-radius: $border-radius;
+      font-family: inherit;
+      transition: border-color $transition-normal ease, box-shadow $transition-normal ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+      
+      &.error {
+        border-color: $error-color;
+      }
+    }
+    
+    .error-text {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      color: $error-color;
+      font-size: $font-size-sm;
+    }
+    
+    .submit-btn {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius;
+      font-weight: 600;
+      margin-top: $spacing-sm;
+      transition: all $transition-normal ease;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+    
+    .success-message {
+      text-align: center;
+      padding: $spacing-xl 0;
+      
+      svg {
+        color: $success-color;
+        margin-bottom: $spacing-md;
+      }
+      
+      h3 {
+        color: $gray-800;
+        margin-bottom: $spacing-sm;
+      }
+      
+      p {
+        color: $gray-600;
+      }
+    }
+  }
+  
+  // Framework Demo Styles
+  .framework-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    
+    .bs-components {
+      padding: $spacing-lg;
+    }
+    
+    .bs-header {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      margin-bottom: $spacing-lg;
+      
+      svg {
+        color: $primary-color;
+      }
+      
+      h3 {
+        margin: 0;
+        color: $gray-800;
+      }
+    }
+    
+    .bs-row {
+      display: flex;
+      gap: $spacing-lg;
+    }
+    
+    .bs-col {
+      flex: 1;
+    }
+    
+    .bs-card {
+      border: 1px solid $gray-200;
+      border-radius: $border-radius;
+      overflow: hidden;
+      margin-bottom: $spacing-lg;
+      
+      .bs-card-img {
+        height: 160px;
+        background-color: $gray-200;
+        background-image: linear-gradient(45deg, $gray-300 25%, transparent 25%, transparent 50%, $gray-300 50%, $gray-300 75%, transparent 75%, transparent);
+        background-size: 20px 20px;
+      }
+      
+      .bs-card-body {
+        padding: $spacing-md;
+        
+        h4 {
+          margin-bottom: $spacing-sm;
+          color: $gray-800;
+        }
+        
+        p {
+          margin-bottom: $spacing-md;
+          color: $gray-600;
+        }
+      }
+    }
+    
+    .bs-alert {
+      background-color: rgba($success-color, 0.1);
+      color: darken($success-color, 20%);
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius;
+      margin-bottom: $spacing-md;
+      
+      strong {
+        margin-right: $spacing-xs;
+      }
+    }
+    
+    .bs-form {
+      margin-bottom: $spacing-md;
+      
+      label {
+        display: block;
+        margin-bottom: $spacing-xs;
+        color: $gray-700;
+      }
+      
+      input {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 1px solid $gray-300;
+        border-radius: $border-radius;
+        
+        &::placeholder {
+          color: $gray-400;
+        }
+      }
+    }
+    
+    .bs-btn {
+      padding: $spacing-xs $spacing-md;
+      border-radius: $border-radius;
+      font-weight: 500;
+      border: 1px solid transparent;
+      margin-right: $spacing-xs;
+      cursor: pointer;
+      
+      &.bs-btn-primary {
+        background-color: $primary-color;
+        color: white;
+        
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+      
+      &.bs-btn-secondary {
+        background-color: $gray-500;
+        color: white;
+        
+        &:hover {
+          background-color: darken($gray-500, 10%);
+        }
+      }
+    }
+  }
+  
+  // Sass Demo Styles
+  .sass-demo {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    
+    .sass-examples {
+      padding: $spacing-lg;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+    
+    .example-item {
+      h4 {
+        margin-bottom: $spacing-sm;
+        color: $gray-800;
+        display: inline-block;
+        padding: $spacing-xs $spacing-sm;
+        background-color: rgba($primary-color, 0.1);
+        border-radius: $border-radius;
+        font-size: $font-size-base;
+      }
+    }
+  }
+  
+  .code-sample {
+    background-color: $code-bg;
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-top: $spacing-sm;
+    
+    pre {
+      margin: 0;
+      padding: $spacing-md;
+      max-height: 300px;
+      overflow-y: auto;
+      
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($white, 0.2);
+        border-radius: $border-radius-full;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    .task-content {
+      flex-direction: column;
+      
+      &.reverse {
+        flex-direction: column;
+      }
+    }
+    
+    .task-description, .task-preview {
+      width: 100%;
+    }
+    
+    .api-demo .posts-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .framework-demo .bs-row {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+    
+    .section-header h2 {
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

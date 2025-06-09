@@ -1,0 +1,147 @@
+@import 'variables';
+
+.footer {
+  background-color: $gray-800;
+  color: $white;
+  padding: $spacing-3xl 0 $spacing-xl;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-2xl;
+  }
+  
+  .footer-logo {
+    max-width: 300px;
+    
+    svg {
+      color: $primary-color;
+      margin-bottom: $spacing-sm;
+    }
+    
+    h2 {
+      font-size: $font-size-2xl;
+      margin-bottom: $spacing-xs;
+    }
+    
+    p {
+      color: $gray-400;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: $spacing-2xl;
+  }
+  
+  .footer-section {
+    h3 {
+      color: $white;
+      margin-bottom: $spacing-md;
+      font-size: $font-size-lg;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    li {
+      margin-bottom: $spacing-sm;
+    }
+    
+    a {
+      color: $gray-400;
+      transition: color $transition-normal ease;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    
+    .contact-info {
+      li {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        color: $gray-400;
+      }
+      
+      svg {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba($white, 0.1);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: $spacing-md;
+    
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: rgba($white, 0.1);
+      border-radius: $border-radius-full;
+      transition: all $transition-normal ease;
+      
+      svg {
+        color: $white;
+      }
+      
+      &:hover {
+        background-color: $primary-color;
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .copyright {
+    color: $gray-500;
+    font-size: $font-size-sm;
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    .footer-content {
+      flex-direction: column;
+      gap: $spacing-xl;
+    }
+    
+    .footer-logo {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .footer-links {
+      flex-wrap: wrap;
+      gap: $spacing-xl;
+    }
+    
+    .footer-section {
+      min-width: 200px;
+    }
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    .footer-links {
+      flex-direction: column;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: $spacing-md;
+      text-align: center;
+    }
+  }
+}

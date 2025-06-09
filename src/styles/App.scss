@@ -1,0 +1,105 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  color: $text-color;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-family;
+}
+
+// Utility classes
+.primary-btn {
+  display: inline-block;
+  background-color: $primary-color;
+  color: white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+  }
+}
+
+.secondary-btn {
+  display: inline-block;
+  background-color: white;
+  color: $primary-color;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  font-weight: 600;
+  border: 2px solid $primary-color;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+// Code block styling
+pre {
+  background-color: $code-bg;
+  border-radius: $border-radius;
+  padding: $spacing-sm;
+  overflow-x: auto;
+  
+  code {
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    color: $code-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+}
