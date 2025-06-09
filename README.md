@@ -28,7 +28,7 @@ Interactive-website-Development/
 
 - **HTML5**
 - **CSS3**
-- *(Optional)* JavaScript for interactivity
-- *(Optional)* Responsive design techniques with Flexbox/Grid
+-  JavaScript for interactivity
+-  Responsive design techniques with Flexbox/Grid
 
 ---
