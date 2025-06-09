@@ -32,11 +32,3 @@ Interactive-website-Development/
 - *(Optional)* Responsive design techniques with Flexbox/Grid
 
 ---
-
-## 📷 Screenshots
-
-> Add screenshots of your website here using:
-```markdown
-![Homepage Screenshot](assets/screenshot1.png)
-
-
