@@ -32,3 +32,9 @@ Interactive-website-Development/
 -  Responsive design techniques with Flexbox/Grid
 
 ---
+
+Deployment
+The project is deployed and accessible online at:
+https://congnigy.web.app
+
+You can visit this link to see the live version of the application in action.
