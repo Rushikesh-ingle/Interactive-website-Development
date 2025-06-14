@@ -33,7 +33,8 @@ Interactive-website-Development/
 
 ---
 
-Deployment
+Deployment:
+
 The project is deployed and accessible online at:
 https://congnigy.web.app
 
